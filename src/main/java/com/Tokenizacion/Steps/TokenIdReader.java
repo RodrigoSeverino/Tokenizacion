@@ -17,7 +17,7 @@ public class TokenIdReader {
         reader.setLineMapper(new DefaultLineMapper<TokenDTO>(){{
             setLineTokenizer(new FixedLengthTokenizer() {{
                 setNames("nroTarjeta", "FechaVencimiento");
-                setColumns(new Range[]{new Range(2,17), new Range(82,88)});
+                setColumns(new Range[]{new Range(2,17), new Range(100,106)});
             }});
             setFieldSetMapper((FieldSetMapper<TokenDTO>) new TokenFileRowMapper());
         }});
