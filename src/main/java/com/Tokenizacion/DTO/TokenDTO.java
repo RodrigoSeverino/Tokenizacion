@@ -1,12 +1,12 @@
 package com.Tokenizacion.DTO;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class TokenDTO {
 
     private String tokenId;
     private String status;
-    private Date fechaCreacion;
+    private LocalDate fechaCreacion;
 
     public String getTokenId() {
         return tokenId;
@@ -24,11 +24,11 @@ public class TokenDTO {
         this.status = status;
     }
 
-    public Date getFechaCreacion() {
+    public LocalDate getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(LocalDate fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 
