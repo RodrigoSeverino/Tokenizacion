@@ -8,7 +8,9 @@ import org.springframework.context.annotation.Bean;
 
 import javax.sql.DataSource;
 
+
 public class TokenWriter {
+
     public static JdbcBatchItemWriter<TokenDTO> writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<TokenDTO>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())

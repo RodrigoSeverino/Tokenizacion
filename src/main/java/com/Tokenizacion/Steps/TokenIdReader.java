@@ -1,7 +1,6 @@
 package com.Tokenizacion.Steps;
 
 import com.Tokenizacion.DTO.CardDTO;
-import com.Tokenizacion.DTO.TokenDTO;
 import com.Tokenizacion.Mappers.TokenFileRowMapper;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.mapping.DefaultLineMapper;
