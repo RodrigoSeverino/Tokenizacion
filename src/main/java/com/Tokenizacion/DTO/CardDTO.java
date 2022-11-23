@@ -1,30 +1,30 @@
 package com.Tokenizacion.DTO;
 
 public class CardDTO {
-    private String nroTarjeta;
-    private String fechaVencimiento;
+    private String cardNumber;
+    private String expiredDate;
 
-    public String getNroTarjeta() {
-        return nroTarjeta;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
-    public void setNroTarjeta(String nroTarjeta) {
-        this.nroTarjeta = nroTarjeta;
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
-    public String getFechaVencimiento() {
-        return fechaVencimiento;
+    public String getExpiredDate() {
+        return expiredDate;
     }
 
-    public void setFechaVencimiento(String fechaVencimiento) {
-        this.fechaVencimiento = fechaVencimiento;
+    public void setExpiredDate(String expiredDate) {
+        this.expiredDate = expiredDate;
     }
 
     @Override
     public String toString() {
-        return "TarjetaDTO{" +
-                "nroTarjeta='" + nroTarjeta + '\'' +
-                ", fechaVencimiento='" + fechaVencimiento + '\'' +
+        return "CardDTO{" +
+                "cardNumber='" + cardNumber + '\'' +
+                ", expiredDate='" + expiredDate + '\'' +
                 '}';
     }
 }

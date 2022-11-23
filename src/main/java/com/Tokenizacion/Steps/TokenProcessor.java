@@ -11,9 +11,9 @@ public class TokenProcessor implements ItemProcessor<CardDTO, TokenDTO> {
     private static final int CARD_LENGHT = 16;
     private static final Logger log = LoggerFactory.getLogger(TokenProcessor.class);
     public TokenDTO process(CardDTO cardDTO) throws Exception {
-        if (cardDTO.getNroTarjeta() == null)
+        if (cardDTO.getCardNumber() == null)
             throw new CardNotFoundException("Tarjeta de credito no encontrada");
-        if(cardDTO.getNroTarjeta().length() != CARD_LENGHT)
+        if(cardDTO.getCardNumber().length() != CARD_LENGHT)
             throw new InvalidCardException("Tarjeta de crédito inválida");
         //Crear objeto TokenDTO
         TokenDTO tokenDTO = new TokenDTO();
