@@ -4,7 +4,6 @@ import com.Tokenizacion.DTO.TokenDTO;
 import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider;
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder;
-import org.springframework.context.annotation.Bean;
 
 import javax.sql.DataSource;
 
