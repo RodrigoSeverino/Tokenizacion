@@ -13,7 +13,7 @@ public class TokenWriter {
     public static JdbcBatchItemWriter<TokenDTO> writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<TokenDTO>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO DA_Tokens (tokenId, status, fechaCreacion) VALUES (:tokenId, :status, :fechaCreacion)")
+                .sql("INSERT INTO DA_Tokens (tokenId, status, created_date) VALUES (:tokenId, :status, :fechaCreacion)")
                 .dataSource(dataSource)
                 .build();
     }
