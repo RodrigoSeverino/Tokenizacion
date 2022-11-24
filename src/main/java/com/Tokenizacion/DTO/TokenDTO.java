@@ -8,6 +8,14 @@ public class TokenDTO {
     private String status;
     private LocalDate fechaCreacion;
 
+    public TokenDTO() {}
+
+    public TokenDTO(String tokenId, String status, LocalDate fechaCreacion) {
+        this.tokenId = tokenId;
+        this.status = status;
+        this.fechaCreacion = fechaCreacion;
+    }
+
     public String getTokenId() {
         return tokenId;
     }

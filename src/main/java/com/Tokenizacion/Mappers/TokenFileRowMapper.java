@@ -12,6 +12,7 @@ public class TokenFileRowMapper implements RowMapper<TokenDTO>{
     public TokenDTO mapRow(ResultSet rs, int rowNum) throws SQLException {
         tokenDTO.setTokenId(rs.getString("tokenId"));
         tokenDTO.setStatus(rs.getString("status"));
+        tokenDTO.setFechaCreacion(rs.getDate("created_date").toLocalDate());
 
         return tokenDTO;
     }

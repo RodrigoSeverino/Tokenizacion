@@ -2,7 +2,6 @@ package com.Tokenizacion.Steps;
 import javax.sql.DataSource;
 
 import com.Tokenizacion.Listener.JobCompleteListener;
-import com.Tokenizacion.Mappers.TokenFileRowMapper;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -41,15 +40,17 @@ public class GenerateTokenId {
     @Bean
     public static FlatFileItemReader<CardDTO> reader(){
         FlatFileItemReader<CardDTO> reader = new FlatFileItemReader<>();
-        reader.setResource(new ClassPathResource("CDL_LoteTenisClub_2510_ConCDL_v1.txt"));
+        reader.setResource(new ClassPathResource("Cards.txt"));
         reader.setLineMapper(new DefaultLineMapper<>() {{
             setLineTokenizer(new FixedLengthTokenizer() {{
                 setNames("nroTarjeta", "FechaVencimiento");
-                setColumns(new Range[]{new Range(2, 17), new Range(100, 106)});
+                setColumns(new Range[]{new Range(1, 16), new Range(17, 22)});
             }});
             setFieldSetMapper(new BeanWrapperFieldSetMapper<CardDTO>() {{setTargetType(CardDTO.class);}}
             );
         }});
+        reader.setLinesToSkip(1);
+        reader.setMaxItemCount(18);
         return reader;
     }
 
@@ -57,7 +58,7 @@ public class GenerateTokenId {
     public JdbcBatchItemWriter<TokenDTO> writer(DataSource dataSource) {
         return new JdbcBatchItemWriterBuilder<TokenDTO>()
                 .itemSqlParameterSourceProvider(new BeanPropertyItemSqlParameterSourceProvider<>())
-                .sql("INSERT INTO DA_Tokens (tokenId, status, fechaCreacion) VALUES (:tokenId, :status, :fechaCreacion)")
+                .sql("INSERT INTO DA_Tokens (tokenId, status, created_date) VALUES (:tokenId, :status, :fechaCreacion)")
                 .dataSource(dataSource)
                 .build();
     }
