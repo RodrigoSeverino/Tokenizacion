@@ -22,6 +22,9 @@ public class TokenProcessor implements ItemProcessor<CardDTO, TokenDTO> {
         tokenDTO.setTokenId("312hdhqwueh21e7hsaduihe21uiqw");
         tokenDTO.setStatus("Activo");
         tokenDTO.setFechaCreacion(LocalDate.now());
+        log.info("Token = " + tokenDTO.getTokenId());
+        log.info("Status = " + tokenDTO.getStatus());
+        log.info("Creado el " + tokenDTO.getFechaCreacion());
         //retornar tokendto
         return tokenDTO;
     }

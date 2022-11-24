@@ -1,5 +1,6 @@
 package com.Tokenizacion.Listener;
 
+import com.Tokenizacion.DTO.TokenDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.BatchStatus;
@@ -23,8 +24,15 @@ public class JobCompleteListener extends JobExecutionListenerSupport {
 
     @Override
     public void afterJob(JobExecution jobExecution) {
-        if(jobExecution.getStatus() == BatchStatus.COMPLETED) {
+        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
             log.info("!!! JOB FINALIZADO! VERIFICA RESULTADOS");
+            jdbcTemplate.query("SELECT tokenId, status, created_date FROM DA_Tokens",
+                    (rs, row) -> new TokenDTO(
+                            rs.getString(1),
+                            rs.getString(2),
+                            rs.getDate(3).toLocalDate()
+                    )
+            ).forEach(token -> log.info("Se encontro  <" + token + "> en la base de datos."));
         }
     }
 }
