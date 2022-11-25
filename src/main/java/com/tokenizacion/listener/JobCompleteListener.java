@@ -1,6 +1,6 @@
-package com.Tokenizacion.Listener;
+package com.tokenizacion.listener;
 
-import com.Tokenizacion.DTO.TokenDTO;
+import com.tokenizacion.dto.TokenDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.core.BatchStatus;

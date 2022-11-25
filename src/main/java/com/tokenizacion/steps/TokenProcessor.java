@@ -1,12 +1,12 @@
-package com.Tokenizacion.Steps;
+package com.tokenizacion.steps;
 import java.time.LocalDate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.batch.item.ItemProcessor;
-import com.Tokenizacion.DTO.CardDTO;
-import com.Tokenizacion.DTO.TokenDTO;
-import com.Tokenizacion.Exceptions.CardNotFoundException;
-import com.Tokenizacion.Exceptions.InvalidCardException;
+import com.tokenizacion.dto.CardDTO;
+import com.tokenizacion.dto.TokenDTO;
+import com.tokenizacion.exceptions.CardNotFoundException;
+import com.tokenizacion.exceptions.InvalidCardException;
 public class TokenProcessor implements ItemProcessor<CardDTO, TokenDTO> {
     private static final int CARD_LENGHT = 16;
     private static final Logger log = LoggerFactory.getLogger(TokenProcessor.class);

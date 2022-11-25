@@ -1,4 +1,4 @@
-package com.Tokenizacion.Enums;
+package com.tokenizacion.enums;
 
 public enum StatusEnum {
     ACTIVE(1), SUSPENDED(2), DELETED(3), PENDING(4);

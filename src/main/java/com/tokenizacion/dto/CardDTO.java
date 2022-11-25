@@ -1,4 +1,4 @@
-package com.Tokenizacion.DTO;
+package com.tokenizacion.dto;
 
 public class CardDTO {
     private String nroTarjeta;

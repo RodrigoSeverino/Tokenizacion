@@ -1,7 +1,7 @@
-package com.Tokenizacion.Steps;
+package com.tokenizacion.steps;
 import javax.sql.DataSource;
 
-import com.Tokenizacion.Listener.JobCompleteListener;
+import com.tokenizacion.listener.JobCompleteListener;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
@@ -19,8 +19,8 @@ import org.springframework.batch.item.file.transform.Range;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import com.Tokenizacion.DTO.CardDTO;
-import com.Tokenizacion.DTO.TokenDTO;
+import com.tokenizacion.dto.CardDTO;
+import com.tokenizacion.dto.TokenDTO;
 import org.springframework.core.io.ClassPathResource;
 
 @Configuration

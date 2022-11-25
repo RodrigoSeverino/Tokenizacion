@@ -1,6 +1,6 @@
-package com.Tokenizacion.Mappers;
+package com.tokenizacion.mappers;
 
-import com.Tokenizacion.DTO.TokenDTO;
+import com.tokenizacion.dto.TokenDTO;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

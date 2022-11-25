@@ -1,6 +1,6 @@
-package com.Tokenizacion.Steps;
+package com.tokenizacion.steps;
 
-import com.Tokenizacion.DTO.TokenDTO;
+import com.tokenizacion.dto.TokenDTO;
 import org.springframework.batch.item.database.BeanPropertyItemSqlParameterSourceProvider;
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilder;

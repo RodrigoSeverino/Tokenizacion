@@ -1,4 +1,4 @@
-package com.Tokenizacion.Exceptions;
+package com.tokenizacion.exceptions;
 public class InvalidCardException extends RuntimeException{
     public static String code = "400";
     private String message;
